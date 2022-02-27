@@ -5,7 +5,12 @@ FROM node:alpine
 WORKDIR /usr/app
 
 #Install some dependencies
+#Syntax: COPY <src> <dest>
+COPY package.json/ ./
 RUN npm install
+
+#Copy in necessary files (prevent unnecessary rebuilds)
+COPY ./ ./
 
 #Default command
 CMD ["npm", "start"]
