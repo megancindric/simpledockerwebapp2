@@ -14,3 +14,6 @@ COPY ./ ./
 
 #Default command
 CMD ["npm", "start"]
+
+#Expose mapped ports
+EXPOSE 3000
